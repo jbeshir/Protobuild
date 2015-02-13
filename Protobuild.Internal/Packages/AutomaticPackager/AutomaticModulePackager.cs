@@ -626,10 +626,10 @@ namespace Protobuild
                     var include = file.Attribute(XName.Get("Include"));
                     var linkElement = file.XPathSelectElement("Link");
                     var link = linkElement != null ? linkElement.Value : include.Value;
-
+                    
                     var fileInfo = new FileInfo(Path.Combine(
                         definition.ModulePath.Replace('/', Path.DirectorySeparatorChar).Replace('\\', Path.DirectorySeparatorChar), 
-                        definition.Path.Replace('/', Path.DirectorySeparatorChar).Replace('\\', Path.DirectorySeparatorChar), 
+                        definition.PathRelativeToModule.Replace('/', Path.DirectorySeparatorChar).Replace('\\', Path.DirectorySeparatorChar), 
                         include.Value.Replace('/', Path.DirectorySeparatorChar).Replace('\\', Path.DirectorySeparatorChar)));
 
                     if (definition.Type == "Library")

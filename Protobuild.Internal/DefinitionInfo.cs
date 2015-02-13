@@ -55,6 +55,16 @@ namespace Protobuild
         }
 
         /// <summary>
+        /// Gets or sets the path of the project, relative to the root of the module.
+        /// </summary>
+        /// <value>The project path, relative to the root of the module.</value>
+        public string PathRelativeToModule
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets or sets the type of the project.
         /// </summary>
         /// <value>The project type.</value>
@@ -147,6 +157,8 @@ namespace Protobuild
                     doc.Root.Attribute(XName.Get("SkipAutopackage")).Value.ToLowerInvariant();
                 def.SkipAutopackage = skipValue == "true";
             }
+
+            def.PathRelativeToModule = def.Path;
 
             return def;
         }

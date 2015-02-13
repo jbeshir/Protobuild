@@ -9,6 +9,7 @@ namespace Protobuild
         {
             this.EnabledServices = new List<string>();
             this.DisabledServices = new List<string>();
+            this.PackageCrossPackAttributes = new Dictionary<string, string>();
         }
 
         public ICommand CommandToExecute { get; set; }
@@ -50,6 +51,12 @@ namespace Protobuild
         public string StartProjectName { get; set; }
 
         public string PackageRoot { get; set; }
+
+        public string PackageSourceFile { get; set; }
+
+        public string[] PackageNuGetReferences { get; set; }
+
+        public Dictionary<string, string> PackageCrossPackAttributes { get; set; }
 
         public void SetCommandToExecuteIfNotDefault(ICommand command)
         {
