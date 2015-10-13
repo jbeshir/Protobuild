@@ -13,7 +13,7 @@ namespace Protobuild
 
         private readonly Dictionary<string, string> _knownTools = new Dictionary<string, string>
         {
-            {"jsilc", "http://protobuild.org/hach-que/JSIL"},
+            {"jsilc", "http://protobuild.org/jbeshir/JSIL"},
             {"swig", "http://protobuild.org/hach-que/SWIG"},
         };
 
